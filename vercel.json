@@ -8,13 +8,8 @@
     ],
     "routes": [
       {
-        "src": "/transaction/gettx",
-        "dest": "Routers/txRoute.js"
-      },
-      {
-        "src": "/transaction/posttx",
-        "methods":["POST"],
-        "dest": "Routers/txRoute.js"
+        "src":"/(.*)",
+        "dest":"index.js"
       }
     ]
 }
