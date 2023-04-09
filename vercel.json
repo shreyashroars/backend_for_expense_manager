@@ -9,11 +9,12 @@
     "routes": [
       {
         "src": "/transaction/gettx",
-        "dest": "index.js"
+        "dest": "Routers/txRoute.js"
       },
       {
         "src": "/transaction/posttx",
-        "dest": "index.js"
+        "methods":["POST"],
+        "dest": "Routers/txRoute.js"
       }
     ]
 }
