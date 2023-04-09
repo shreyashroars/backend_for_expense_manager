@@ -9,7 +9,7 @@
     "routes": [
       {
         "src": "/transaction/(.*)",
-        "dest": "Router/txRouter.js"
+        "dest": "Routers/txRouter.js"
       }
     ]
 }
