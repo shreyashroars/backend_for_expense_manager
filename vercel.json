@@ -8,14 +8,11 @@
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "methods":["GET",
-          "POST"],
+        "src": "/transaction/gettx",
         "dest": "index.js"
       },
       {
-        "src": "/(.*)",
-       
+        "src": "/transaction/posttx",
         "dest": "index.js"
       }
     ]
