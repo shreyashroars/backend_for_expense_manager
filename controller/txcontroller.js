@@ -1,5 +1,20 @@
 const transactionModel = require("../models/txModel");
 
+// module.exports.gettx=async function gettx(req,res)
+// {
+//     //console.log(req.query);
+//     let id=req.params.id;
+//     let User= await userModel.findById(id);
+//     if(User)
+//     {
+//     res.json(User);
+//     }
+//     else
+//     {
+//         res.json({message:"User not found"})
+//     }
+
+// }
 module.exports.posttx=async function posttx(req,res)
 {
     try {
@@ -40,4 +55,28 @@ module.exports.getAlltx=async function getAlltx(req,res)
     }
     
     
+}
+module.exports.deltx= async function deltx(req,res)
+{
+    try
+    {
+        let id=req.params.id;
+        let tx=await transactionModel.findOneAndDelete({id:id});
+        if(tx)
+        {
+            res.json({message:"Transaction deleted successfully",data:tx});
+        }
+        else
+        {
+            res.json({message:"Transaction not found"});
+        }
+        res.json(
+            {message:'data deleted successfully',
+            data:tx
+        }); 
+
+    }catch(error)
+    {
+        res.json({message:error.message});
+    }
 }
